@@ -85,6 +85,7 @@ margin-left:144px;
 margin-bottom:100px;
 @media(max-width: 768px){
     margin-left:0;
+    margin-bottom:30px;
 }
 h1{
     font-weight: 600;
