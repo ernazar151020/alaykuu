@@ -41,6 +41,9 @@ export default Vacancies
 
 const Wrapper = styled.div`
 padding:40px 144px 40px;
+@media(max-width:768px){
+    padding:15px;
+}
 h1{
     font-weight: 600;
 font-size: 32px;
