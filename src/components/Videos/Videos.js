@@ -111,12 +111,13 @@ position:relative;
     position:absolute;
     width: 50px;
     height:50px;
-    left: 0px;
-    top: 90px;
+    left: 30%;
+    bottom: 0px;
  background-repeat: no-repeat;
  background-size: 100% auto;
  background-position: center;
  display:none;
+ transform: translateY(80px);
  @media(max-width: 768px){
     display:block;
  }
@@ -131,11 +132,12 @@ position:relative;
     position:absolute;
     width: 50px;
     height:50px;
-    right: 0px;
-    top: 90px;
+    right: 30%;
+    bottom: 90px;
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: center;
+    transform: translateY(80px);
  @media(max-width: 768px){
     display:block;
  }
@@ -152,7 +154,7 @@ z-index:1000;
 .swiper {
   width: 100%;
   height: 100%;
-  /* min-height:400px; */
+  min-height:250px;
 }
 
 .swiper-slide {
