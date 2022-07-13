@@ -1,43 +1,35 @@
 import React from 'react'
 import styled from 'styled-components';
+import { milkData } from './../../../data/data';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from "swiper";
-import LeftArrow from "../../assets/slide-arrow-left.png"
-import RightArrow from "../../assets/slide-arrow-right.png"
+// import LeftArrow from "../../../assets/slide-arrow-left.png"
+// import RightArrow from "../../../assets/slide-arrow-right.png"
+import   LeftArrow from "../../../assets/arrow-sm-right.png"
+import  RightArrow from "../../../assets/arrow-sm-left.png"
 
-const Slider = ({ products }) => {
+console.log("milkData" , milkData)
 
-
-  return (
-    <Wrapper>
-      <Swiper
-        slidesPerView={6}
+const MilkProducts = () => {
+    return (
+        <Wrapper id="products">
+            <h1>Молочная
+                продукция</h1>
+            <p>Без крахмала и ЗМЖ.  Только натуральное. Можете проверить!</p>
+            <Swiper
+        slidesPerView={2}
         spaceBetween={40}
         centeredSlides={true}
         loop={true}
         pagination={{
           clickable: true,
         }}
-        breakpoints={{
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 4,
-            spaceBetween: 40,
-          },
-          1024: {
-            slidesPerView: 6,
-            spaceBetween: 40,
-          },
-        }}
         modules={[Navigation]}
         className="mySwiper"
         navigation={true}
       >
         {
-          products.map((item, index) => {
+          milkData.map((item, index) => {
             return <SwiperSlide key={index}>
               <Item >
                 {item.image}
@@ -48,14 +40,39 @@ const Slider = ({ products }) => {
         }
 
       </Swiper>
-    </Wrapper>
-  )
+        </Wrapper>
+    )
 }
 
-export default Slider
+export default MilkProducts
 
 const Wrapper = styled.div`
-  .swiper-slide.swiper-slide-active{
+background: linear-gradient(178.82deg, #A2C8F1 53.02%, #DDEDFC 98.96%);
+padding:40px 0 0px 0px;
+display:none;
+@media(max-width: 768px){
+display:block;
+}
+h1{
+    font-weight: 700;
+font-size: 28px;
+line-height: 32px;
+text-align: center;
+color: #FFFFFF;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+margin-bottom:20px;
+}
+p{
+    font-weight: 400;
+font-size: 14px;
+line-height: 18px;
+text-align: center;
+color: #231F20;
+margin-bottom:45px;
+}
+
+/* swiper css */
+.swiper-slide.swiper-slide-active{
     transform:scale(1.2)
   }
   .swiper.swiper.swiper-initialized.swiper-horizontal.swiper-pointer-events.mySwiper{
@@ -67,13 +84,14 @@ position:relative;
     background-image: url(${LeftArrow});
     z-index:9999;
     position:absolute;
-    width: 85px;
-    height:180px;
-    left: 0px;
-    top: 70px;
+    width: 40px;
+    height:40px;
+    left: 50px;
+    bottom: 0px;
  background-repeat: no-repeat;
  background-size: 100% auto;
  background-position: center;
+ transform: translateY(130px);
     :after{
       display:none;
     }
@@ -83,13 +101,14 @@ position:relative;
  
     z-index:9999;
     position:absolute;
-    width: 75px;
-    height:180px;
-    right: 0px;
-    top: 70px;
+    width: 40px;
+    height:40px;
+    right: 50px;
+    bottom: 0px;
  background-repeat: no-repeat;
  background-size: 100% auto;
  background-position: center;
+ transform: translateY(130px);
     :after{
       display:none;
     }
@@ -103,6 +122,8 @@ z-index:1000;
 .swiper {
   width: 100%;
   height: 100%;
+  padding:40px 0;
+  min-height:450px;
 }
 
 .swiper-slide {
@@ -133,6 +154,7 @@ z-index:1000;
   height: 100%;
   object-fit: cover;
 }
+
 
 `
 

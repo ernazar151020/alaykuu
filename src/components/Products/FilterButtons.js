@@ -17,6 +17,9 @@ const Wrapper = styled.div`
 display:flex;
 justify-content:center;
 align-items:center;
+@media(max-width:767px){
+    display:none;
+}
 
 button{
     padding:10px 20px;

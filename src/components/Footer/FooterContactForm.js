@@ -25,10 +25,17 @@ export default FooterContactForm
 
 const FormWrapper = styled.div`
 margin:0 auto;
+@media(max-width:768px){
+    order:1;
+}
 form{
     background: #FFFFFF;
 border-radius: 30px;
 max-width:400px;
+@media(max-width:768px){
+    max-width:350px; 
+    margin-bottom:40px;
+}
 }
 .text{
     font-weight: 400;

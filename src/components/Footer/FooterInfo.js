@@ -8,46 +8,51 @@ import { ReactComponent as Facebook } from "../../assets/social-icons/facebook.s
 import styled from "styled-components"
 
 const FooterInfo = () => {
-  return (
-    <Info>
-        <h1 className='mb-10'>Контакты</h1>
-        <div className='text'>Оставайтесь с нами на связи</div>
-        <Contacts>
-            <div className='flex items-center mb-5'>
-                <MobilePhone />
-                <a className="ml-2" href="tel:0220505001">0(220) 50 50 01</a>
-            </div>
-            <div className='flex items-center mb-5'>
-                <Location />
-                <a className="ml-2" href="tel:0220505001">г. Ош, ул. Джамбула 7</a>
-            </div>
-            <div className='flex items-center mb-5'>
-                <Phone />
-                <a className="ml-2" href="tel:0312252233">0(312) 25 22 33</a>
-            </div>
-            <div className='flex items-center mb-5'>
-                <Email />
-                <a className="ml-2" href="tel:0312252233">office.alaiku@gmail.com</a>
-            </div>
-        </Contacts>
-        <div className='text mt-7'>Следите за нами в соцсетях:</div>
-        <SocialLinks>
-            <div className='flex items-center mb-5'>
-                <Instagram />
-                <a className="ml-2" href="tel:0312252233">alaiku.kg</a>
-            </div>
-            <div className='flex items-center mb-5'>
-                <Facebook />
-                <a className="ml-2" href="tel:0312252233">alaiku.kg</a>
-            </div>
-        </SocialLinks>
-    </Info>
-  )
+    return (
+        <Info>
+            <h1 className='mb-10'>Контакты</h1>
+            <div className='text'>Оставайтесь с нами на связи</div>
+            <Contacts>
+                <div className='flex items-center mb-5'>
+                    <MobilePhone />
+                    <a className="ml-2" href="tel:0220505001">0(220) 50 50 01</a>
+                </div>
+                <div className='flex items-center mb-5'>
+                    <Location />
+                    <a className="ml-2" href="tel:0220505001">г. Ош, ул. Джамбула 7</a>
+                </div>
+                <div className='flex items-center mb-5'>
+                    <Phone />
+                    <a className="ml-2" href="tel:0312252233">0(312) 25 22 33</a>
+                </div>
+                <div className='flex items-center mb-5'>
+                    <Email />
+                    <a className="ml-2" href="tel:0312252233">office.alaiku@gmail.com</a>
+                </div>
+            </Contacts>
+            <div className='text mt-7'>Следите за нами в соцсетях:</div>
+            <SocialLinks>
+                <div className='flex items-center mb-5'>
+                    <Instagram />
+                    <a className="ml-2" href="tel:0312252233">alaiku.kg</a>
+                </div>
+                <div className='flex items-center mb-5'>
+                    <Facebook />
+                    <a className="ml-2" href="tel:0312252233">alaiku.kg</a>
+                </div>
+            </SocialLinks>
+        </Info>
+    )
 }
 
 export default FooterInfo
 
 const Info = styled.div`
+
+@media(max-width:768px){
+    padding:15px;
+    order:2;
+}
 h1{
     font-weight: 600;
 font-size: 32px;
@@ -60,12 +65,19 @@ font-size: 20px;
 line-height: 24px;
 color: #FFFFFF;
 margin-bottom:20px;
+@media(max-width:768px){
+    font-size: 18px;
+line-height: 24px;
+}
 }
 `
 
 const Contacts = styled.div`
 display:grid;
 grid-template-columns:1fr 1fr;
+@media(max-width:768px){
+    display:inline-block;
+}
 a{
     font-weight: 400;
 font-size: 16px;
@@ -77,6 +89,9 @@ color: #F2F2F2;
 const SocialLinks = styled.div`
 display:grid;
 grid-template-columns:1fr 1fr;
+@media(max-width:768px){
+    display:inline-block;
+}
 a{
     font-weight: 400;
 font-size: 16px;

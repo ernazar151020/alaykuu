@@ -4,7 +4,7 @@ import MainSlider1 from '../MainSliders/MainSlider1';
 import MainSlider2 from '../MainSliders/MainSlider2';
 import MainSlider3 from './../MainSliders/MainSlider3';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation } from "swiper";
+import { Pagination, Navigation  , Autoplay} from "swiper";
 import LeftArrow from "../../assets/slide-arrow-left.png"
 import RightArrow from "../../assets/slide-arrow-right.png"
 
@@ -18,6 +18,10 @@ const MainSlider = () => {
                 loop={true}
                 pagination={{
                     clickable: true,
+                }}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
                 }}
                 // breakpoints={{
                 //     640: {
@@ -33,7 +37,7 @@ const MainSlider = () => {
                 //         spaceBetween: 40,
                 //     },
                 // }}
-                modules={[Navigation]}
+                modules={[Autoplay ,Navigation]}
                 className="mySwiper"
                 navigation={true}
             >
@@ -46,18 +50,6 @@ const MainSlider = () => {
                 <SwiperSlide >
                     <MainSlider3 />
                 </SwiperSlide>
-
-                {/* {
-          products.map((item, index) => {
-            return <SwiperSlide key={index}>
-              <Item >
-                {item.image}
-                <img src={item.image} />
-              </Item>
-            </SwiperSlide>
-          })
-        } */}
-
             </Swiper>
         </Wrapper>
     )
@@ -67,6 +59,9 @@ export default MainSlider
 
 const Wrapper = styled.div`
 padding-top:26px;
+@media(max-width: 768px){
+  padding-top:50px;
+}
 /* min-height:600px; */
 .swiper-slide.swiper-slide-active{
     transform:scale(1.2)
@@ -90,6 +85,9 @@ position:relative;
  background-repeat: no-repeat;
  background-size: 100% auto;
  background-position: center;
+ @media(max-width:768px){
+  display:none;
+ }
     :after{
       display:none;
     }
@@ -106,6 +104,9 @@ position:relative;
  background-repeat: no-repeat;
  background-size: 100% auto;
  background-position: center;
+ @media(max-width:768px){
+  display:none;
+ }
     :after{
       display:none;
     }

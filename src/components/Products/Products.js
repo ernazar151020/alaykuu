@@ -88,6 +88,9 @@ export default Products
 
 const Wrapper = styled.div`
 padding: 60px 0 120px;
+@media(max-width: 768px){
+  display:none;
+}
 `
 
 const TextContent = styled.div`
@@ -101,11 +104,25 @@ line-height: 70px;
 color: #FFFFFF;
 text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 margin-bottom:10px;
+@media(max-width: 768px) {
+  font-size: 28px;
+line-height: 32px;
+width:170px;
+margin:0 auto;
+margin-bottom:20px;
+}
 }
 p{
   font-weight: 400;
 font-size: 20px;
 line-height: 28px;
 color: #231F20;
+@media(max-width: 768px) {
+  font-weight: 400;
+font-size: 14px;
+line-height: 18px;
+padding:0 15px;
+}
+
 }
 `

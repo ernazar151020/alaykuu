@@ -7,27 +7,11 @@ import { ReactComponent as Phone } from "../../assets/phone.svg"
 import { Link } from "react-router-dom"
 import { ReactComponent as Burger } from "../../assets/burger.svg"
 import { ReactComponent as Close } from "../../assets/close.svg"
-const Navbar = ({ handleBurger, showSidebar }) => {
+
+const SideBar = ({ handleBurger }) => {
     return (
-        <NavbarWrap>
-
-            <Link to="/">
-                <LogoComponent>
-                    <Logo />
-                </LogoComponent>
-            </Link>
-            {
-                !showSidebar ? <div className="burger hidden sm:block" onClick={handleBurger}>
-                    <Burger />
-                </div> : <button
-                    className="flex text-4xl text-red-500 items-center cursor-pointer fixed right-6 top-10 z-50"
-                    onClick={handleBurger}
-                >
-                    <Close />
-                </button>
-            }
-
-            <NavItems className="md:hidden sm:hidden">
+        <Wrapper>
+            <NavItems >
                 <li>
                     <Link to="/">Главная</Link>
                 </li>
@@ -37,7 +21,6 @@ const Navbar = ({ handleBurger, showSidebar }) => {
                 <li className='about_company_btn relative'>
                     <div className='flex items-center'>
                         <a>О компании</a>
-                        <span><ArrowDown /></span>
                     </div>
                     <ItemLinks>
                         <li>
@@ -54,84 +37,64 @@ const Navbar = ({ handleBurger, showSidebar }) => {
                 <li>
                     <a>Контакты</a>
                 </li>
+                <Contact>
+                    <div>
+                        <Phone />
+                        <a href="tel:0220505001">0(220) 50 50 01</a>
+                    </div>
+                </Contact>
                 <li className='flex items-center'>
                     <Russian />
                     <a className="ml-2">Русский</a>
                     <span><ArrowDown /></span>
                 </li>
+             
             </NavItems>
-            <Contact>
-                <Phone />
-                <a href="tel:0220505001">0(220) 50 50 01</a>
-            </Contact>
-        </NavbarWrap>
+        </Wrapper>
     )
 }
 
-export default Navbar
+export default SideBar
 
-const NavbarWrap = styled.div`
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:26px 50px;
-position:relative;
-z-index:1;
-@media(max-width:768px){
-    padding:26px 10px;
-    }
-.burger{
-    display:none;
-    @media(max-width:768px){
-        display:block;
-    }
-}
+const Wrapper = styled.div`
+background-color: #fff;
+position: relative;
+z-index: 10000;
+height: 100%;
 `
-const LogoComponent = styled.div``
+
 const ItemLinks = styled.div`
-position: absolute;
-bottom:-65px;
-z-index:100;
-left:-20%;
-background: #FFFFFF;
-box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.08);
 border-radius: 10px;
 padding:8px 15px;
-display:none;
-:hover{
-    display:block;
- 
-}
+margin-top:20px;
 
 a{
     white-space:nowrap;
     font-weight: 400;
 font-size: 14px;
 line-height: 24px;
-color: #231F20;
-    :hover{
-        color:blue;
-    }
+color: red;
 }
 `
+
 const NavItems = styled.ul`
 
 display:flex;
 justify-content:space-between;
-align-items:center;
-@media(max-width:767px){
-    display:none;
-}
+align-items:left;
+flex-direction:column;
+/* height:100%; */
+
 li{
     margin:0 25px;
+    margin-bottom:30px;
 
 }
 a{
     font-weight: 500;
-font-size: 14px;
-line-height: 20px;
+font-size: 18px;
+line-height: 24px;
 color: #231F20;
-cursor: pointer;
 }
 
 .about_company_btn{
@@ -148,14 +111,18 @@ cursor: pointer;
 
 `
 const Contact = styled.div`
-display:flex;
-align-items:center;
-border: 1px solid #0175E0;
-border-radius: 30px;
-padding:16px;
-cursor: pointer;
-@media(max-width:767px){
-    display:none;
+display: inline-block;
+max-width:190px;
+margin-bottom:20px;
+margin-left:20px;
+div{
+    display:flex;
+    /* display: inline-block; */
+    align-items:center;
+    border: 1px solid #0175E0;
+    border-radius: 30px;
+    padding:16px;
+    cursor: pointer;
 }
 a{
     font-weight: 500;
@@ -164,5 +131,5 @@ line-height: 16px;
 color: #0175E0;
 margin-left: 16px;
 }
-`
 
+`

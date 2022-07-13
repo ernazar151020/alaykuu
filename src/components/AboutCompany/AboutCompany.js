@@ -3,24 +3,8 @@ import { ReactComponent as RightArrow } from "../../assets/arrow-right.svg"
 import AboutCompanyImg from "../../assets/about-company-bg.svg"
 import styled from "styled-components"
 import { Link } from 'react-router-dom';
+import Videos from '../Videos/Videos';
 
-const videos = [
-    {
-        link: "https://pbs.twimg.com/media/Dce-Ul4XcAANtoO.jpg",
-    },
-    {
-        link: "https://pbs.twimg.com/media/Dce-Ul4XcAANtoO.jpg",
-    },
-    {
-        link: "https://pbs.twimg.com/media/Dce-Ul4XcAANtoO.jpg",
-    },
-    {
-        link: "https://pbs.twimg.com/media/Dce-Ul4XcAANtoO.jpg",
-    },
-    {
-        link: "https://pbs.twimg.com/media/Dce-Ul4XcAANtoO.jpg",
-    },
-]
 
 const AboutCompany = () => {
     return (<>
@@ -42,18 +26,7 @@ const AboutCompany = () => {
                 </Image>
             </div>
         </Wrapper>
-            <VideoContent>
-                <h1>Видео о нас</h1>
-                <Videos>
-                    {
-                        videos.map((item, index) => {
-                            return <div className="video mx-3" key={index}>
-                                <img src={item.link} />
-                            </div>
-                        })
-                    }
-                </Videos>
-            </VideoContent>
+        <Videos />
     </>
     )
 }
@@ -99,21 +72,3 @@ img{
 }
 `
 
-const VideoContent = styled.div`
-margin-left:144px;
-margin-bottom:100px;
-h1{
-    font-weight: 600;
-font-size: 24px;
-line-height: 28px;
-color: #000000;
-margin-bottom:30px;
-}
-`
-
-const Videos = styled.div`
-display:flex;
-.video{
-
-}
-`
