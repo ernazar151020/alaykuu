@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import { milkData, coldDrinks } from './../../../data/data';
+import { milkData, coldDrinks, nationalDrinks } from './../../../data/data';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from "swiper";
 // import LeftArrow from "../../../assets/slide-arrow-left.png"
@@ -10,39 +10,39 @@ import RightArrow from "../../../assets/arrow-sm-left.png"
 
 
 const NationalProducts = () => {
-    return (
-        <Wrapper id="products">
-            <h1>
-                Прохладительные
-                напитки
-            </h1>
-            <p>Дары природы в наших напитках без добавлений сахара!</p>
-            <Swiper
-                slidesPerView={2}
-                spaceBetween={40}
-                centeredSlides={true}
-                loop={true}
-                pagination={{
-                    clickable: true,
-                }}
-                modules={[Navigation]}
-                className="mySwiper"
-                navigation={true}
-            >
-                {
-                    coldDrinks.map((item, index) => {
-                        return <SwiperSlide key={index}>
-                            <Item >
-                                {item.image}
-                                {/* <img src={item.image} /> */}
-                            </Item>
-                        </SwiperSlide>
-                    })
-                }
+  return (
+    <Wrapper id="products">
+      <h1>
+        Национальные
+        напитки
+      </h1>
+      <p>Уникальность и натуральность - наши главные ценности!</p>
+      <Swiper
+        slidesPerView={2}
+        spaceBetween={40}
+        centeredSlides={true}
+        loop={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Navigation]}
+        className="mySwiper"
+        navigation={true}
+      >
+        {
+          nationalDrinks.map((item, index) => {
+            return <SwiperSlide key={index}>
+              <Item >
+                {/* {item.image} */}
+                <img src={item.image} />
+              </Item>
+            </SwiperSlide>
+          })
+        }
 
-            </Swiper>
-        </Wrapper>
-    )
+      </Swiper>
+    </Wrapper>
+  )
 }
 
 export default NationalProducts
@@ -62,6 +62,8 @@ text-align: center;
 color: #FFFFFF;
 text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 margin-bottom:20px;
+word-wrap: break-word;
+white-space: pre-wrap;
 }
 p{
     font-weight: 400;
@@ -153,9 +155,9 @@ z-index:1000;
 .swiper-slide img {
   display: block;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
 
-  object-fit: cover;
+  object-fit: contain;
 }
 
 
@@ -169,5 +171,9 @@ align-items: center;
 justify-content: center;
 filter: drop-shadow(0px 8px 40px rgba(0, 0, 0, 0.04));
 border-radius: 30px;
+img{
+  width:100%;
+  height:160px;
+}
 
 `

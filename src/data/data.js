@@ -1,82 +1,85 @@
-import { ReactComponent as Milk } from "../assets/milk.svg"
+import  Milk  from "../assets/milk.svg"
 import { ReactComponent as NationalDrink } from "../assets/national-drink.svg"
 import { ReactComponent as ColdDrink } from "../assets/cold-drink.svg"
+import MilkProducts from "../assets/milk-products.png"
+import NationalProducts from "../assets/national-products.png"
+import ColdProducts from "../assets/cold-products.png"
 
 
 export const milkData = [
     {
-        image: <Milk />
+        image: MilkProducts
     },
     {
-        image: <Milk />
+        image: MilkProducts
     },
     {
-        image: <Milk />
+        image: MilkProducts
     },
     {
-        image: <Milk />
+        image: MilkProducts
     },
     {
-        image: <Milk />
+        image: MilkProducts
     },
     {
-        image: <Milk />
+        image: MilkProducts
     },
 ]
 export const nationalDrinks = [
     {
-        image: <NationalDrink />
+        image: NationalProducts
     },
     {
-        image: <NationalDrink />
+        image: NationalProducts
     },
     {
-        image: <NationalDrink />
+        image: NationalProducts
     },
     {
-        image: <NationalDrink />
+        image: NationalProducts
     },
     {
-        image: <NationalDrink />
+        image: NationalProducts
     },
     {
-        image: <NationalDrink />
+        image: NationalProducts
     },
     {
-        image: <NationalDrink />
+        image: NationalProducts
     },
     {
-        image: <NationalDrink />
+        image: NationalProducts
     },
   
 ]
 export const coldDrinks = [
     {
-        image: <ColdDrink />
+        image: ColdProducts
     },
     {
-        image: <ColdDrink />
+        image: ColdProducts
     },
     {
-        image: <ColdDrink />
+        image: ColdProducts
     },
     {
-        image: <ColdDrink />
+        image: ColdProducts
     },
     {
-        image: <ColdDrink />
+        image: ColdProducts
     },
     {
-        image: <ColdDrink />
+        image: ColdProducts
     },
     {
-        image: <ColdDrink />
+        image: ColdProducts
     },
     {
-        image: <ColdDrink />
+        image: ColdProducts
     },
     {
-        image: <ColdDrink />
+        image: ColdProducts
     },
 
   

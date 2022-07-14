@@ -40,8 +40,8 @@ const Slider = ({ products }) => {
           products.map((item, index) => {
             return <SwiperSlide key={index}>
               <Item >
-                {item.image}
-                {/* <img src={item.image} /> */}
+                {/* {item.image} */}
+                <img src={item.image} />
               </Item>
             </SwiperSlide>
           })
@@ -130,8 +130,9 @@ z-index:1000;
 .swiper-slide img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  /* height: 100%; */
+  /* height: 100px; */
+  object-fit: contain;
 }
 
 `
@@ -144,5 +145,9 @@ align-items: center;
 justify-content: center;
 filter: drop-shadow(0px 8px 40px rgba(0, 0, 0, 0.04));
 border-radius: 30px;
+img{
+  width:100%;
+  height:160px;
+}
 
 `
